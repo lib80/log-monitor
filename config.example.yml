@@ -1,0 +1,17 @@
+dingding:
+  access_token: xxx
+  secret: xxx
+  at_mobiles: ["139xxx"]
+#  is_at_all: true
+yunzhijia:
+  webhook: https://www.yunzhijia.com/gateway/robot/webhook/send?yzjtype=0&yzjtoken=xxx
+  at_names: ["张三"]
+#  is_at_all: true
+
+receivers: ["dingding", "yunzhijia"]
+
+monitor_targets:
+  - paths: ["catalina.out"] # 监控文件路径
+    include_key_words: ["Exception", "Error"]  # 过滤关键字
+  - paths: ["processor.log"]
+    include_key_words: ["Failed"]
